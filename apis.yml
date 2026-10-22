@@ -1,25 +1,66 @@
 aid: ourzora-com
+
 name: Zora
+
+image: https://zora.co/assets/image/default-og-image.png
+
 description: 'Zora is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
   backed by kindred-ventures) and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/ourzora-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- kindred-ventures
+
 common:
+- type: Hosts
+  url: hosts/ourzora-com-hosts.yml
+- type: Vendors
+  url: vendors/ourzora-com-vendors.yml
+- type: DeveloperPortal
+  url: https://zora.co/settings/developer
+- type: GettingStarted
+  url: https://zora.co/onboarding
+- type: DomainSecurity
+  url: security/ourzora-com-domain-security.yml
 - type: Website
   url: https://ourzora.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Developer docs redirect to a JavaScript‑rendered site with no machine‑readable spec.
+  evidence:
+    - url: https://zora.co/developers
+      status: 302
+  checked: '2026-10-22'
+
+x-backed-by:
+- kindred-ventures
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

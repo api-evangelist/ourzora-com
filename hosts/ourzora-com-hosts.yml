@@ -1,0 +1,62 @@
+generated: '2026-10-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 2
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - portal
+  - website
+hosts:
+- host: api.ourzora.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: ourzora.com
+  role: api
+  relation: own
+- host: api.zora.co
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: zora.co
+  role: api
+  relation: other-domain
+- host: ourzora.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: ourzora.com
+  role: website
+  relation: own
+- host: zora.co
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - DeveloperPortal
+  - GettingStarted
+  serves:
+  - docs
+  - cdn
+  - hosting
+  vendor: cloudflare
+  registrable_domain: zora.co
+  role: portal
+  relation: other-domain
